@@ -1,8 +1,9 @@
 #!/bin/bash
+source ec2-config
 
 # retreives the list of public ip addresses of all running ec2 instances and stores them in public_ip.txt
-./ec2-describe-instances -O AKIAILPDQUSJYLQJ5IGQ -W wVZqqjegYh/I9KZY/I203ABK6t2AoFEK7wj1rlIu --region us-west-2 --show-empty-fields --filter "instance-state-name=running" | grep NICASSOCIATION | awk '{ print $2 }' > public_ip.txt
+./ec2-describe-instances -O $AWS_ACCESS_KEY  -W $AWS_SECRET_KEY --region $FUSIONFS_EC2_REGION --show-empty-fields --filter "instance-state-name=running" | grep NICASSOCIATION | awk '{ print $2 }' > public_ip.txt
 
 
 # retreives the list of private ip addresses of all running ec2 instances and stores them in private_ip.txt
-./ec2-describe-instances -O AKIAILPDQUSJYLQJ5IGQ -W wVZqqjegYh/I9KZY/I203ABK6t2AoFEK7wj1rlIu --region us-west-2 --show-empty-fields --filter "instance-state-name=running" | grep NICASSOCIATION | awk '{ print $4 }' > private_ip.txt
+./ec2-describe-instances -O $AWS_ACCESS_KEY  -W $AWS_SECRET_KEY --region $FUSIONFS_EC2_REGION --show-empty-fields --filter "instance-state-name=running" | grep NICASSOCIATION | awk '{ print $4 }' > private_ip.txt
