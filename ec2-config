@@ -1,4 +1,4 @@
-# The region where the instances run 
+# The region where the instances run. For example: us-west-2
 export FUSIONFS_EC2_REGION=
 
 # The path to the .pem file on local machine, that is used for all instances
