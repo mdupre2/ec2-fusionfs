@@ -16,7 +16,7 @@ iparr=($(cat public_ip.txt | awk '{ print $1 }'))
 for j in "${iparr[@]}"
 do
     echo "starting fusionfs on node $j"
-    ssh -i ${FUSIONFS_EC2_KEY} $FUSIONFS_EC2_USER@${j} "source ~/.bash_profile; cd $(dirname $FUSIONFS_EC2_START);$FUSIONFS_EC2_START"   #start fusionfs
+    ssh -i ${FUSIONFS_EC2_KEY} $FUSIONFS_EC2_USER@${j} "source ~/.profile; cd $(dirname $FUSIONFS_EC2_START);$FUSIONFS_EC2_START"   #start fusionfs
     echo
 done
 
