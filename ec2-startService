@@ -34,7 +34,7 @@ do
     echo "setting neighbor.conf on node $j"
     scp -i ${FUSIONFS_EC2_KEY} tmpneighbor.conf $FUSIONFS_EC2_USER@${j}:$FUSIONFS_EC2_START_NEIGHBORS  #copy neighbor.conf
     echo "starting services on node $j"
-    ssh -i ${FUSIONFS_EC2_KEY} $FUSIONFS_EC2_USER@${j} "source ~/.bash_profile; cd $(dirname $FUSIONFS_EC2_START_SERVICE); $FUSIONFS_EC2_START_SERVICE"   #start services
+    ssh -i ${FUSIONFS_EC2_KEY} $FUSIONFS_EC2_USER@${j} "source ~/.profile; cd $(dirname $FUSIONFS_EC2_START_SERVICE); $FUSIONFS_EC2_START_SERVICE"   #start services
     echo 
 done
 
