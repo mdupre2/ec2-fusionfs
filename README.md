@@ -52,9 +52,9 @@ Usage: ec2-rm insance_file
 
 ##Setup
 1. Create ec2 instances. All insances must have FusionFS installed in the same location. Having all the instances look the same is helpful. 
-2. Fill in `ec2-config` file. Note that any environment variables exported in ~/.bashrc of the instance will not be exported. Export all environment variables in ~/.bash_profile. 
+2. Fill in `ec2-config` file. Note that any environment variables exported in ~/.bashrc of the instance will not be exported. Export all environment variables in ~/.profile. 
 3. If you don't have a AWS user with **administative permissions**, [create a user](http://docs.aws.amazon.com/IAM/latest/UserGuide/ManagingCredentials.html). 
-4. Use the downloaded credentials to fill in `AWS_ACCESS_KEY` and `WS_SECRET_KEY` in `ec2-config`
+4. Use the downloaded credentials to fill in `AWS_ACCESS_KEY` and `AWS_SECRET_KEY` in `ec2-config`
 
 ##Use
 1. When ever you run new instances or stop an instance, call ec2-ip
